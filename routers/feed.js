@@ -10,7 +10,8 @@ const router = express.Router();
 router.get('/posts', feedControllers.getPosts);
 
 //POST /feed/post
-router.post('/post',
+router.post(
+    '/post',
     [
         body('title')
             .trim()
@@ -19,6 +20,9 @@ router.post('/post',
             .trim()
             .isLength({ min: 5 })
     ],
-    feedControllers.postCreatePost);
+    feedControllers.postCreatePost
+);
+
+router.get('/post/:postId', feedControllers.getPost);
 
 module.exports = router;

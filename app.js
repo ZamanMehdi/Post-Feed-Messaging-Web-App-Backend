@@ -19,7 +19,7 @@ app.use('/feed', feedRouters);
 
 mongoose
     .connect(
-        'mongodb+srv://ZamanMehdi:qazwsx74@cluster0.cjl3w.mongodb.net/Post-Feed-Web-App'
+        'mongodb+srv://ZamanMehdi:qazwsx74@cluster0.cjl3w.mongodb.net/Post-Feed-Web-App?retryWrites=true'
     )
     .then(result => {
         app.listen(8080);

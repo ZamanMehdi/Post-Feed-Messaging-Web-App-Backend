@@ -5,7 +5,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const feedRouters = require('./routers/feed');
-const { error } = require('console');
 
 const app = express();
 

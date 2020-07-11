@@ -4,7 +4,7 @@ exports.getPosts = (req, res, next) => {
     })
 }
 
-exports.PostCreatePost = (req, res, next) => {
+exports.postCreatePost = (req, res, next) => {
     const title = req.body.title;
     const content = req.body.content;
     

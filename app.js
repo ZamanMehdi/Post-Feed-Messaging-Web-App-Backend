@@ -30,7 +30,8 @@ app.use((error, req, res, next) => {
 
 mongoose
     .connect(
-        'mongodb+srv://ZamanMehdi:qazwsx74@cluster0.cjl3w.mongodb.net/Post-Feed-Web-App?retryWrites=true'
+        'mongodb+srv://ZamanMehdi:qazwsx74@cluster0.cjl3w.mongodb.net/Post-Feed-Web-App?retryWrites=true&w=majority',
+        { useUnifiedTopology: true, useNewUrlParser: true }
     )
     .then(result => {
         app.listen(8080);

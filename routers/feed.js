@@ -23,6 +23,18 @@ router.post(
     feedControllers.postCreatePost
 );
 
-router.get('/post/:postId', feedControllers.getPost);
+router.get(
+    '/post/:postId', 
+    [
+        body('title')
+            .trim()
+            .isLength({ min: 5 }),
+        body('content')
+            .trim()
+            .isLength({ min: 5 })
+    ],
+    feedControllers.getPost);
+
+router.put('/post/:postId', feedControllers.updatePost);
 
 module.exports = router;

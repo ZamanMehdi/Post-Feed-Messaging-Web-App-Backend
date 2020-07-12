@@ -8,6 +8,7 @@ const uuidv4 = require('uuid-v4');
 const multer = require('multer');
 
 const feedRouters = require('./routers/feed');
+const authRouters = require('./routers/auth');
 
 const app = express();
 
@@ -46,6 +47,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/feed', feedRouters);
+app.use('/auth', authRouters);
 
 app.use((error, req, res, next) => {
     console.log(error);
